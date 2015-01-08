@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150107074525) do
+ActiveRecord::Schema.define(version: 20150108141739) do
+
+  create_table "tweets", force: true do |t|
+    t.string   "tweet_text", limit: 140
+    t.string   "location"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tweets", ["user_id"], name: "index_tweets_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name",                   default: "", null: false

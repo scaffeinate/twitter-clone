@@ -18,3 +18,15 @@
 body {
   padding-top: 100px;
 }
+
+.alert-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-left: 40%;
+  margin-top: 60px;
+  width: 300px;
+  z-index: 100;
+  text-align: center;
+  padding: 5px 25px;
+}

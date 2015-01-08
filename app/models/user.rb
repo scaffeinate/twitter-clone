@@ -5,4 +5,7 @@ class User < ActiveRecord::Base
     :recoverable, :rememberable, :trackable, :validatable
   validates :name, presence: true, length: { maximum: 100 }
   validates :username, presence: true, length: { maximum: 20 }
+
+  has_many :tweets
+
 end
