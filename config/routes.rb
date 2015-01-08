@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   unauthenticated :user do
     root 'static_pages#index'
   end
+
+  resources :tweets, except: [:new, :edit]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
