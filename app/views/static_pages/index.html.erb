@@ -21,6 +21,7 @@
           <div class="well">
             <h4>Create an Account</h4>
             <%= render "devise/registrations/form" %>
+            <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %>
           </div>
         </div>
       </div>
