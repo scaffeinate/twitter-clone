@@ -16,7 +16,7 @@
 @import "bootstrap";
 
 body {
-  padding-top: 100px;
+  padding-top: 75px;
 }
 
 .alert-fixed {
@@ -24,9 +24,9 @@ body {
   top: 0;
   left: 0;
   margin-left: 40%;
-  margin-top: 60px;
+  margin-top: 10px;
   width: 300px;
-  z-index: 100;
+  z-index: 10000;
   text-align: center;
   padding: 5px 25px;
 }

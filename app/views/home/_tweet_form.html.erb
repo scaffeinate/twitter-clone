@@ -1,0 +1,8 @@
+<%= form_tag({ action: :create, controller: :tweets }, { remote: true }) do %>
+  <div class="form-group">
+    <%= text_area_tag "tweet[tweet_text]", nil, class: "form-control", placeholder: "Enter Tweet 140 characters" %>
+  </div>
+  <div class="form-group">
+    <%= submit_tag "Tweet", id: "tweet", class: "btn btn-primary" %>
+  </div>
+<% end %>
