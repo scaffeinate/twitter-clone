@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>TwitterClone</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title>Twitter Clone</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render 'partials/navbar' %>
+    <% unless notice.blank? %>
+      <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+          <div class="alert alert-info alert-dismissable">
+            <%= notice %>
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <% unless alert.blank? %>
+      <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+          <div class="alert alert-danger alert-dismissable">
+            <%= alert %>
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
+  </body>
 </html>
