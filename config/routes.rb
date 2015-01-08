@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :tweets, except: [:new, :edit]
+  resources :users, except: [:new, :create]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
