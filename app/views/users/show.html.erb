@@ -1,3 +1,37 @@
-<div>
-  <%= render 'partials/avatar', user: @user %>
+<div style="<%= user_cover(@user) %>" class="cover-pic">
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="well">
+      <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+          <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href="#">Tweets</a></li>
+            <li role="presentation"><a href="#">Following</a></li>
+            <li role="presentation"><a href="#">Followers</a></li>
+            <li role="presentation"><a href="#">Favorites</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-lg-offset-1">
+          <%= link_to "Edit Profile", edit_user_path(@user), class: 'btn btn-default' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-3">
+    <div class="user-info">
+      <%= render 'partials/avatar', user: @user %>
+      <h4><b><%= @user.name %></b></h4>
+      <h3><small>@<%= @user.username %></small></h3>
+      <h5><%= @user.about || 'No Info' %></h5>
+      <h5><%= @user.location %></h5>
+      <h5><%= @user.website %></h5>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="well">
+    </div>
+  </div>
 </div>
