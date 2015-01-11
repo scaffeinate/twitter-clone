@@ -5,9 +5,17 @@
 .cover-pic {
   margin-top: -70px;
   height: 300px;
+  background-attachment: fixed;
+  background-position: center;
 }
 
-.avatar {
-  width: 125px;
+.avatar, .avatar-lg {
+  width: 35px;
+  border-radius: 10rem;
+}
+
+.avatar-lg {
+  width: 100px;
+  border-radius: 0;
   border: 5px solid #fff;
 }
