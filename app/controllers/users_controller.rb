@@ -3,9 +3,6 @@ class UsersController < ApplicationController
   before_action :set_user
   before_action :authenticate_user!
 
-  def edit
-  end
-
   def update
     @user.update(user_params)
     if @user.save
@@ -25,7 +22,7 @@ class UsersController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
   end
 
 end
