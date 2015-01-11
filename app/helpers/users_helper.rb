@@ -6,4 +6,9 @@ module UsersHelper
       "background: #ccc"
     end
   end
+
+  def following?(user)
+    !current_user.relationships.find_by_friend_id(user.id).nil?
+  end
+
 end

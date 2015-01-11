@@ -16,7 +16,9 @@
           <% if @user == current_user %>
             <%= link_to "Edit Profile", edit_user_path(@user), class: 'btn btn-default' %>
           <% else %>
-            <%= link_to "Follow", '#', class: 'btn btn-default' %>
+            <div id="relation-<%= @user.id %>">
+              <%= render 'partials/follow', user: @user %>
+            </div>
           <% end %>
         </div>
       </div>
