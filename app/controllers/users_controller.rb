@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :set_user
+  before_action :check_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user!
 
   def update
@@ -19,6 +20,12 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :username, :password,
                                  :about, :location, :website, :avatar, :cover)
+  end
+
+  def check_user
+    if @user != current_user
+      redirect_to root_path
+    end
   end
 
   def set_user
