@@ -13,7 +13,9 @@
             <li class="<%= view_type=='followers' ? 'active' : ''%>">
               <%= link_to "Followers", followers_user_path(@user) %>
             </li>
-            <li class="<%= view_type=='favorites' ? 'active' : ''%>"><a href="#">Favorites</a></li>
+            <li class="<%= view_type=='favorites' ? 'active' : ''%>">
+              <a href="#">Favorites</a>
+            </li>
           </ul>
         </div>
         <div class="col-lg-2 col-lg-offset-1">
