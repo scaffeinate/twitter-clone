@@ -8,11 +8,7 @@
   <div class="col-lg-6">
     <div id="content">
       <div id="following" class="well">
-        <% if @users.empty? %>
-          <span>No Following</span>
-        <% else %>
-          <%= render @users %>
-        <% end %>
+        <%= render(@users) || "No Following" %>
       </div>
       <div id="load-more">
         <%= render 'partials/load_more' %>
