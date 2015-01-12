@@ -1,4 +1,4 @@
-$('#feed').append("<%= j render(partial: 'partials/tweet', collection: @tweets, as: :tweet) %>");
+$('#feed').append("<%= j render @tweets %>");
 
 <% if @tweets.next_page %>
   $(".pagination").replaceWith("<%= j will_paginate(@tweets) %>");

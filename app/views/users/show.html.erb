@@ -44,9 +44,9 @@
       <% if @tweets.empty? %>
         No Tweets
       <% else %>
-        <%= render partial: 'partials/tweet', collection: @tweets %>
-        <%= render 'partials/load_more' %>
+        <%= render @tweets %>
       <% end %>
     </div>
+    <%= render 'partials/load_more' %>
   </div>
 </div>

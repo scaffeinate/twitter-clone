@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @tweets = @user.tweets.paginate(page: params[:page], per_page: params[:per_page] || 20).order('created_at DESC')
+    @tweets = @user.tweets.paginate(page: params[:page]).order('created_at DESC')
     respond_to do |format|
       format.js
       format.html
