@@ -21,8 +21,7 @@ Rails.application.routes.draw do
   end
 
   resources :relationships, only: [:create, :destroy]
-
-  match '/find_friends' => 'home#find_friends', via: :get
+  resources :find_friends, only: :index
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
