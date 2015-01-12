@@ -8,7 +8,11 @@ module UsersHelper
   end
 
   def following?(user)
-    !current_user.relationships.find_by_friend_id(user.id).nil?
+    !current_user.friends.find_by_id(user).nil?
+  end
+
+  def follows_you?(user)
+    !user.friends.find_by_id(current_user).nil?
   end
 
 end
