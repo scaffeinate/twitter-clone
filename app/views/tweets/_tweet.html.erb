@@ -1,6 +1,8 @@
 <div id="tweet-<%= tweet.id %>" class="row">
   <div class="col-lg-1">
-    <%= render 'partials/avatar', user: tweet.user, klass: 'avatar' %>
+    <%= link_to tweet.user do %>
+      <%= render 'partials/avatar', user: tweet.user, klass: 'avatar' %>
+    <% end %>
   </div>
   <div class="col-lg-8">
     <h5><b><%= tweet.user.name %></b> @<%= tweet.user.username %></h5>
