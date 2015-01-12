@@ -4,6 +4,14 @@ class UsersController < ApplicationController
   before_action :check_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user!
 
+  def show
+    @tweets = @user.tweets.paginate(page: params[:page], per_page: params[:per_page] || 20).order('created_at DESC')
+    respond_to do |format|
+      format.js
+      format.html
+    end
+  end
+
   def update
     @user.update(user_params)
     if @user.save

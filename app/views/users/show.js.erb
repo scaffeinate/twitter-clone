@@ -1,0 +1,9 @@
+$('#feed').append("<%= j render(partial: 'partials/tweet', collection: @tweets, as: :tweet) %>");
+
+<% if @tweets.next_page %>
+  $(".pagination").replaceWith("<%= j will_paginate(@tweets) %>");
+  $(".pagination").hide();
+<% else %>
+  $(window).off('scroll');
+  $(".pagination").remove();
+<% end %>

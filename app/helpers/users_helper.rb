@@ -15,4 +15,8 @@ module UsersHelper
     !user.friends.find_by_id(current_user).nil?
   end
 
+  def relative_time(created_at)
+    time_ago_in_words(created_at)
+  end
+
 end

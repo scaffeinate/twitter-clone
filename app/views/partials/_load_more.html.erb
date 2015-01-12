@@ -1,0 +1,5 @@
+<div class="text-center">
+  <% unless is_last_page?(@tweets) %>
+    <%= will_paginate @tweets %>
+  <% end %>
+</div>

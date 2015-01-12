@@ -40,7 +40,13 @@
     </div>
   </div>
   <div class="col-lg-6">
-    <div class="well">
+    <div id="feed" class="well">
+      <% if @tweets.empty? %>
+        No Tweets
+      <% else %>
+        <%= render partial: 'partials/tweet', collection: @tweets %>
+        <%= render 'partials/load_more' %>
+      <% end %>
     </div>
   </div>
 </div>
