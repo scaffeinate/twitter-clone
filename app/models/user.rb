@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
 
   attr_accessor :login
 
+  self.per_page = 20
+
   extend FriendlyId
   friendly_id :username, use: [:slugged, :finders]
 
