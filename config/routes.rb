@@ -21,8 +21,6 @@ Rails.application.routes.draw do
   end
   resources :relationships, only: [:create, :destroy]
 
-  match 'users/:id/followers' => 'users#followers', via: :get
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

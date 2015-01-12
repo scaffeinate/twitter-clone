@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :set_user
-  before_action :check_user, except: [:edit, :update, :destroy]
+  before_action :check_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user!
 
   def show
@@ -26,10 +26,18 @@ class UsersController < ApplicationController
 
   def followers
     @users = @user.inverse_friends.paginate(page: params[:page])
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def following
     @users = @user.friends.paginate(page: params[:page])
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   private

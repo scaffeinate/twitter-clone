@@ -1,0 +1,10 @@
+<div class="well user-info">
+  <div class="text-center">
+    <%= render 'partials/avatar', user: @user, klass: 'avatar-lg' %>
+    <h4><b><%= @user.name %></b></h4>
+    <h3><small>@<%= @user.username %></small></h3>
+    <h5><%= @user.about || 'No Info' %></h5>
+    <h5><%= @user.location %></h5>
+    <h5><%= @user.website %></h5>
+  </div>
+</div>
