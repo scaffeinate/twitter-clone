@@ -1,5 +1,6 @@
 <% if @tweet.persisted? %>
-  
+  $("#new-tweet").val("");
+  $("#feed").prepend("<%=j render @tweet %>");
 <% else %>
   
 <% end %>
