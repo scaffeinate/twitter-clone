@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   end
 
   def followers
-    @users = @user.inverse_friends.paginate(page: params[:page])
+    @followers = @user.inverse_friends.paginate(page: params[:page])
     respond_to do |format|
       format.js
       format.html
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   end
 
   def following
-    @users = @user.friends.paginate(page: params[:page])
+    @following = @user.friends.paginate(page: params[:page])
     respond_to do |format|
       format.js
       format.html

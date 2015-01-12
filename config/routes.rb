@@ -19,7 +19,10 @@ Rails.application.routes.draw do
       get 'following'
     end
   end
+
   resources :relationships, only: [:create, :destroy]
+
+  match '/find_friends' => 'home#find_friends', via: :get
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

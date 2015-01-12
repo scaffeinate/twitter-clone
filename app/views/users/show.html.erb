@@ -11,7 +11,7 @@
         <%= render(@tweets) || "No Tweets" %>
       </div>
       <div id="load-more">
-        <%= render 'partials/load_more' %>
+        <%= render 'partials/load_more', items: @tweets %>
       </div>
     </div>
   </div>
