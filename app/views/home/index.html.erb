@@ -11,7 +11,15 @@
     </div>
     <div class="row">
       <div class="col-lg-10 col-lg-offset-1">
-        <div class="well">
+        <div id="feed" class="well">
+          <% if @tweets.empty? %>
+            No Tweets
+          <% else %>
+            <%= render @tweets %>
+          <% end %>
+        </div>
+        <div id="load-more">
+          <%= render 'partials/load_more' %>
         </div>
       </div>
     </div>

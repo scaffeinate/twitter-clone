@@ -40,7 +40,15 @@
     </div>
   </div>
   <div class="col-lg-6">
-    <div class="well">
+    <div id="feed" class="well">
+      <% if @tweets.empty? %>
+        No Tweets
+      <% else %>
+        <%= render @tweets %>
+      <% end %>
+    </div>
+    <div id="load-more">
+      <%= render 'partials/load_more' %>
     </div>
   </div>
 </div>

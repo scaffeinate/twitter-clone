@@ -1,0 +1,15 @@
+<div id="tweet-<%= tweet.id %>" class="row">
+  <div class="col-lg-1">
+    <%= link_to tweet.user do %>
+      <%= render 'partials/avatar', user: tweet.user, klass: 'avatar' %>
+    <% end %>
+  </div>
+  <div class="col-lg-8">
+    <h5><b><%= tweet.user.name %></b> @<%= tweet.user.username %></h5>
+    <span><%= tweet.tweet_text %></span>
+  </div>
+  <div class="col-lg-3">
+    <%= relative_time(tweet.created_at) %>
+  </div>
+</div>
+<br>
