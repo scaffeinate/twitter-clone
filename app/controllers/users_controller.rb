@@ -24,6 +24,22 @@ class UsersController < ApplicationController
   def destroy
   end
 
+  def followers
+    @followers = @user.inverse_friends.paginate(page: params[:page])
+    respond_to do |format|
+      format.js
+      format.html
+    end
+  end
+
+  def following
+    @following = @user.friends.paginate(page: params[:page])
+    respond_to do |format|
+      format.js
+      format.html
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :username, :password,

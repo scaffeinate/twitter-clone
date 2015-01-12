@@ -13,8 +13,16 @@ Rails.application.routes.draw do
   end
 
   resources :tweets, except: [:new, :edit]
-  resources :users, except: [:new, :create]
+  resources :users, except: [:new, :create] do
+    member do
+      get 'followers'
+      get 'following'
+    end
+  end
+
   resources :relationships, only: [:create, :destroy]
+
+  match '/find_friends' => 'home#find_friends', via: :get
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

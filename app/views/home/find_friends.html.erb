@@ -1,0 +1,10 @@
+<div id="find_friends" class="well">
+  <% if @users.empty? %>
+    <span>No Following</span>
+  <% else %>
+    <%= render(@users) %>
+  <% end %>
+</div>
+<div id="load-more">
+  <%= render 'partials/load_more', items: @users %>
+</div>

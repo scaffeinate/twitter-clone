@@ -1,0 +1,9 @@
+<%= render 'partials/avatar', user: user, klass: 'avatar' %>
+<div id="relation-<%= user.id %>" class="right" style="margin-top: 10px;">
+  <%= render 'partials/follow', user: user %>
+</div>
+<%= link_to user_path(user) do %>
+  <h3 class="inline bold" style="margin-left: 20px;">
+    <small><%= user.name %></small>
+  </h3>
+<% end %>

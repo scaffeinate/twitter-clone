@@ -1,0 +1,10 @@
+$('#following').append("<%= j render @following %>");
+
+<% if @following.next_page %>
+  $(".pagination").replaceWith("<%= j will_paginate(@following) %>");
+  $(".pagination").hide();
+<% else %>
+  $(window).off('scroll');
+  $("#loader").remove();
+  $(".pagination").remove();
+<% end %>

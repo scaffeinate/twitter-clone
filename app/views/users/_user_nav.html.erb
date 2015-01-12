@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="well">
+      <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+          <ul class="nav nav-pills">
+            <li class="<%= view_type=='profile' ? 'active' : ''%>">
+              <%= link_to "Tweets", user_path(@user) %>
+            </li>
+            <li class="<%= view_type=='following' ? 'active' : ''%>">
+              <%= link_to "Following", following_user_path(@user) %>
+            </li>
+            <li class="<%= view_type=='followers' ? 'active' : ''%>">
+              <%= link_to "Followers", followers_user_path(@user) %>
+            </li>
+            <li class="<%= view_type=='favorites' ? 'active' : ''%>">
+              <a href="#">Favorites</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-lg-offset-1">
+          <%= label_tag 'Follows you', nil if follows_you?(@user) %>
+          <% if @user == current_user %>
+            <%= link_to "Edit Profile", edit_user_path(@user), class: 'btn btn-default' %>
+          <% else %>
+            <div id="relation-<%= @user.id %>">
+              <%= render 'partials/follow', user: @user %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
