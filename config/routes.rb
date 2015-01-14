@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   end
 
   resources :relationships, only: [:create, :destroy]
+  resources :favorites, only: [:create, :destroy]
   resources :find_friends, only: :index
 
   # Example of regular route:

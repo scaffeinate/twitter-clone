@@ -1,5 +1,9 @@
 module TweetsHelper
-  def is_last_page?(tweets)
-    tweets.total_pages == tweets.current_page
+  def get_favorite(tweet_id)
+    current_user.favorites.find_by(tweet_id: tweet_id)
+  end
+
+  def tweet_favored?(tweet_id)
+    !get_favorite(tweet_id).nil?
   end
 end
