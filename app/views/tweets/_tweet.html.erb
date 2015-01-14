@@ -14,11 +14,9 @@
   <div class="col-lg-12">
     <%= link_to :reply, reply_tweet_path(tweet.id), method: :post, remote: true %>
     <%= link_to :retweet, '#' %>
-    <% if tweet_favored?(tweet.id) %>
-      <%= link_to :favored, favorite_path(get_favorite(tweet.id)), method: :delete, remote: true %>
-    <% else %>
-      <%= link_to :favor, favorites_path(tweet_id: tweet.id), method: :post, remote: true %>
-    <% end %>
+    <div id="favor-tweet-<%= tweet.id %>">
+      <%= render 'favorites/favorite', tweet_id: tweet.id %>
+    </div>
   </div>
 </div>
 <br>
