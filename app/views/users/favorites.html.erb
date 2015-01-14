@@ -1,0 +1,18 @@
+<div style="<%= user_cover(@user) %>" class="cover-pic">
+</div>
+<%= render 'user_nav', view_type: 'favorites' %>
+<div class="row">
+  <div class="col-lg-3">
+    <%= render 'user_info' %>
+  </div>
+  <div class="col-lg-6">
+    <div id="content">
+      <div id="favorites" class="well">
+        <%= render(@favorites) || "No Favorites" %>
+      </div>
+      <div id="load-more">
+        <%= render 'partials/load_more', items: @favorites %>
+      </div>
+    </div>
+  </div>
+</div>

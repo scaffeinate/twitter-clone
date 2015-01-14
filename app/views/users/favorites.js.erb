@@ -1,0 +1,10 @@
+$('#favorites').append("<%= j render @favorites %>");
+
+<% if @favorites.next_page %>
+  $(".pagination").replaceWith("<%= j will_paginate(@favorites) %>");
+  $(".pagination").hide();
+<% else %>
+  $(window).off('scroll');
+  $("#loader").remove();
+  $(".pagination").remove();
+<% end %>

@@ -40,6 +40,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def favorites
+    @favorites = Tweet.joins(:favorites).paginate(page: params[:page])
+    respond_to do |format|
+      format.js
+      format.html
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :username, :password,
