@@ -12,7 +12,7 @@
     <%= relative_time(tweet.created_at) %>
   </div>
   <div class="col-lg-12">
-    <%= render 'partials/new_tweet', tweet_id: tweet.id %>
+    <%= link_to :reply, reply_tweet_path(tweet.id), method: :post, remote: true %>
   </div>
 </div>
 <br>

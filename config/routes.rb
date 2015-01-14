@@ -12,7 +12,11 @@ Rails.application.routes.draw do
     root 'static_pages#index'
   end
 
-  resources :tweets, except: [:new, :edit]
+  resources :tweets, except: [:new, :edit] do
+    member do
+      post :reply
+    end
+  end
   resources :users, except: [:new, :create] do
     member do
       get 'followers'

@@ -26,7 +26,13 @@ class TweetsController < ApplicationController
     respond_to do |format|
       format.js
     end
+  end
 
+  def reply
+    @tweet = Tweet.find(params[:id])
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
