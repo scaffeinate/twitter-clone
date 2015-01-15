@@ -41,7 +41,7 @@ class UsersController < ApplicationController
   end
 
   def favorites
-    @favorites = Tweet.joins(:favorites).paginate(page: params[:page])
+    @favorites = current_user.tweets.joins(:favorites).paginate(page: params[:page])
     respond_to do |format|
       format.js
       format.html
