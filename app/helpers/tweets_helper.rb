@@ -14,4 +14,9 @@ module TweetsHelper
   def retweeted?(tweet_id)
     !get_retweet(tweet_id).nil?
   end
+
+  def can_retweet?(tweet_id)
+    Tweet.find(tweet_id).user != current_user
+  end
+
 end

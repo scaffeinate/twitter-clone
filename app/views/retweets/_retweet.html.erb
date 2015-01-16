@@ -1,5 +1,9 @@
-<% if retweeted?(tweet_id) %>
-  <%= link_to :retweeted, retweet_path(get_retweet(tweet_id)), method: :delete, remote: true %>
+<% if can_retweet?(tweet_id) %>
+  <% if retweeted?(tweet_id) %>
+    <%= link_to :retweeted, retweet_path(get_retweet(tweet_id)), method: :delete, remote: true %>
+  <% else %>
+    <%= link_to :retweet, retweets_path(tweet_id: tweet_id), method: :post, remote: true %>
+  <% end %>
 <% else %>
-  <%= link_to :retweet, retweets_path(tweet_id: tweet_id), method: :post, remote: true %>
+  <a href="#">retweet</a>
 <% end %>
