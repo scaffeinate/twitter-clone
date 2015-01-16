@@ -13,8 +13,8 @@
   </div>
   <div class="col-lg-12">
     <%= link_to :reply, reply_tweet_path(tweet.id), method: :post, remote: true %>
-    <div id="retweet-<%= tweet.id %>">
-      <%= render 'retweets/retweet', tweet_id: tweet.id %>
+    <div id="tweet-<%= tweet.id %>">
+      <%= render 'retweets/retweet_button', tweet_id: tweet.id %>
     </div>
     <div id="favor-tweet-<%= tweet.id %>">
       <%= render 'favorites/favorite', tweet_id: tweet.id %>

@@ -1,4 +1,4 @@
-$('#following').append("<%= j render @following %>");
+$('#feed').append("<%= j render @following %>");
 
 <% if @following.next_page %>
   $(".pagination").replaceWith("<%= j will_paginate(@following) %>");

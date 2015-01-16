@@ -22,6 +22,7 @@ Rails.application.routes.draw do
       get 'followers'
       get 'following'
       get 'favorites'
+      get 'retweets'
     end
   end
 

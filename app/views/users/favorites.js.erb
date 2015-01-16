@@ -1,4 +1,4 @@
-$('#favorites').append("<%= j render @favorites %>");
+$('#feed').append("<%= j render @favorites %>");
 
 <% if @favorites.next_page %>
   $(".pagination").replaceWith("<%= j will_paginate(@favorites) %>");
