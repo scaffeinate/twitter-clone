@@ -1,0 +1,10 @@
+$('#feed').append("<%= j render @retweets %>");
+
+<% if @retweets.next_page %>
+  $(".pagination").replaceWith("<%= j will_paginate(@retweets) %>");
+  $(".pagination").hide();
+<% else %>
+  $(window).off('scroll');
+  $("#loader").remove();
+  $(".pagination").remove();
+<% end %>
