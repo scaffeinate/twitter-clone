@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
   resources :relationships, only: [:create, :destroy]
   resources :favorites, only: [:create, :destroy]
+  resources :retweets, only: [:create, :destroy]
   resources :find_friends, only: :index
 
   # Example of regular route:
