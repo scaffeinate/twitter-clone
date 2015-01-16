@@ -22,11 +22,13 @@ Rails.application.routes.draw do
       get 'followers'
       get 'following'
       get 'favorites'
+      get 'retweets'
     end
   end
 
   resources :relationships, only: [:create, :destroy]
   resources :favorites, only: [:create, :destroy]
+  resources :retweets, only: [:create, :destroy]
   resources :find_friends, only: :index
 
   # Example of regular route:

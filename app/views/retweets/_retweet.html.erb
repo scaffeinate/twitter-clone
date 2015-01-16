@@ -1,0 +1,24 @@
+<div id="retweet-<%= retweet.id %>" class="row">
+  <div class="col-lg-1">
+    <%= link_to retweet.retweet.user do %>
+      <%= render 'partials/avatar', user: retweet.retweet.user, klass: 'avatar' %>
+    <% end %>
+  </div>
+  <div class="col-lg-8">
+    <h5><b><%= retweet.retweet.user.name %></b> @<%= retweet.retweet.user.username %></h5>
+    <span><%= retweet.retweet.tweet_text %></span>
+  </div>
+  <div class="col-lg-3">
+    <%= relative_time(retweet.retweet.created_at) %>
+  </div>
+  <div class="col-lg-12">
+    <%= link_to :reply, reply_tweet_path(retweet.id), method: :post, remote: true %>
+    <div id="retweet-<%= retweet.id %>">
+      <%= link_to :retweeted, retweet_path(get_retweet(retweet.retweet.id)), method: :delete, remote: true %>
+    </div>
+    <div id="favor-tweet-<%= retweet.id %>">
+      <%= render 'favorites/favorite', tweet_id: retweet.id %>
+    </div>
+  </div>
+</div>
+<br>

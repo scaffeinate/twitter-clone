@@ -1,6 +1,6 @@
 <div style="<%= user_cover(@user) %>" class="cover-pic">
 </div>
-<%= render 'user_nav', view_type: 'favorites' %>
+<%= render 'user_nav', view_type: 'retweets' %>
 <div class="row">
   <div class="col-lg-3">
     <%= render 'user_info' %>
@@ -8,10 +8,10 @@
   <div class="col-lg-6">
     <div id="content">
       <div id="feed" class="well">
-        <%= render(@favorites) || "No Favorites" %>
+        <%= render(@retweets) || "No Retweets" %>
       </div>
       <div id="load-more">
-        <%= render 'partials/load_more', items: @favorites %>
+        <%= render 'partials/load_more', items: @retweets %>
       </div>
     </div>
   </div>
