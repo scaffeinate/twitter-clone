@@ -15,8 +15,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "*";
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 
 body {
+  font-family: 'Lato';
   padding-top: 75px;
 }
 

@@ -18,10 +18,13 @@
           </div>
         </div>
         <div class="row">
-          <div class="well">
-            <h4>Create an Account</h4>
-            <%= render "devise/registrations/form" %>
-            <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Create an Account</h3>
+            </div>
+            <div class="panel-body">
+              <%= render "devise/registrations/form" %>
+            </div>
           </div>
         </div>
       </div>
