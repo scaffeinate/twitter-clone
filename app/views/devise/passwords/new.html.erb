@@ -1,9 +1,9 @@
-<div class="row">
-  <div class="col-lg-6 col-lg-offset-3">
+<div class="row tw-form">
+  <div class="col-lg-4 col-lg-offset-4">
     <div class="well">
+      <h4><b>Forgot your password?</b></h4>
       <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-          <h2>Forgot your password?</h2>
+        <div class="col-lg-10 col-lg-offset-1">
           <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
             <%= devise_error_messages! %>
             <div class="form-group">
@@ -13,7 +13,6 @@
               <%= f.submit "Reset Password", class: "btn btn-primary" %>
             </div>
           <% end %>
-          <%= render "devise/shared/links" %>
         </div>
       </div>
     </div>

@@ -1,9 +1,9 @@
-<div class="row">
-  <div class="col-lg-6 col-lg-offset-3">
+<div class="tw-form row">
+  <div class="col-lg-4 col-lg-offset-4">
     <div class="well">
+      <h4><b>Resend confirmation</b></h4>
       <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-          <h2>Resend confirmation</h2>
+        <div class="col-lg-10 col-lg-offset-1">
           <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
             <%= devise_error_messages! %>
             <div class="form-group">
@@ -12,7 +12,6 @@
               <%= f.submit "Resend confirmation", class: "btn btn-primary" %>
             </div>
           <% end %>
-          <%= render "devise/shared/links" %>
         </div>
       </div>
     </div>
