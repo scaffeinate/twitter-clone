@@ -3,7 +3,7 @@ class RetweetsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @retweet = Retweet.create(retweet_id: params[:tweet_id], retweeter: current_user)
+    @retweet = Retweet.create(source_tweet_id: params[:tweet_id], retweeter: current_user)
     respond_to do |format|
       format.js
     end
