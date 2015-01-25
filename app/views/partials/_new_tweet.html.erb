@@ -3,7 +3,7 @@
     <% if tweet_id.nil? %>
       <%= text_area_tag 'tweet[tweet_text]', nil, id: 'new-tweet', class: 'form-control', placeholder: 'Enter Tweet 140 characters' %>
     <% else %>
-      <%= text_area_tag 'tweet[tweet_text]', '@#{Tweet.find(tweet_id).user.username}', id: 'new-tweet', class: 'form-control', placeholder: 'Enter Reply' %>
+      <%= text_area_tag 'tweet[tweet_text]', "@#{Tweet.find(tweet_id).user.username}", id: 'new-tweet', class: 'form-control', placeholder: 'Enter Reply' %>
     <% end %>
   </div>
   <div class="form-group">

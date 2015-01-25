@@ -1,5 +1,15 @@
 <div class="row">
   <div class="col-lg-3">
+    <div class="card">
+      <div class="cover" data-cover="<%= current_user.cover %>">
+        <%= image_tag current_user.avatar, class: "avatar" %>
+      </div>
+      <div class="about">
+        <h3 class="name"><%= current_user.name %></h3>
+        <h5 class="username">@<%= current_user.username %></h5>
+        <span class="content"><%= current_user.about %></span>
+      </div>
+    </div>
   </div>
   <div class="col-lg-6">
     <div class="row">
@@ -11,12 +21,8 @@
     </div>
     <div class="row">
       <div class="col-lg-10 col-lg-offset-1">
-        <div id="feed" class="well">
-          <% if @tweets.empty? %>
-            No Tweets
-          <% else %>
-            <%= render @tweets %>
-          <% end %>
+        <div id="feed" class="well feed">
+          <%= render(@tweets) || "No Tweets" %>
         </div>
         <div id="load-more">
           <%= render 'partials/load_more', items: @tweets %>

@@ -1,24 +1,32 @@
-<div id="tweet-<%= tweet.id %>" class="row">
-  <div class="col-lg-1">
-    <%= link_to tweet.user do %>
-      <%= render 'partials/avatar', user: tweet.user, klass: 'avatar' %>
-    <% end %>
-  </div>
-  <div class="col-lg-8">
-    <h5><b><%= tweet.user.name %></b> @<%= tweet.user.username %></h5>
-    <span><%= tweet.tweet_text %></span>
-  </div>
-  <div class="col-lg-3">
-    <%= relative_time(tweet.created_at) %>
-  </div>
-  <div class="col-lg-12">
-    <%= link_to :reply, reply_tweet_path(tweet.id), method: :post, remote: true %>
-    <div id="tweet-<%= tweet.id %>">
-      <%= render 'retweets/retweet_button', tweet_id: tweet.id %>
+<div id="tweet-<%= tweet.id %>" class="micropost">
+  <div class="content">
+    <div class="avatar-content">
+      <%= link_to tweet.user do %>
+        <%= render 'partials/avatar', user: tweet.user, klass: 'avatar' %>
+      <% end %>
     </div>
-    <div id="favor-tweet-<%= tweet.id %>">
-      <%= render 'favorites/favorite', tweet_id: tweet.id %>
+    <div class="post-content">
+      <span class="name"><%= tweet.user.name %></span>
+      <span class="username">@<%= tweet.user.username %></span>
+      <div class="post">
+        <%= tweet.tweet_text %>
+      </div>
+    </div>
+    <div class="right-content">
+      <span><%= relative_time(tweet.created_at) %></span>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="actions-content">
+      <%= link_to reply_tweet_path(tweet.id), method: :post, remote: true do %>
+        <i class="fa fa-arrow-left"></i>
+      <% end %>
+      <span id="retweet-<%= tweet.id %>">
+        <%= render 'retweets/retweet_button', tweet_id: tweet.id %>
+      </span>
+      <span id="favor-tweet-<%= tweet.id %>">
+        <%= render 'favorites/favorite', tweet_id: tweet.id %>
+      </span>
     </div>
   </div>
 </div>
-<br>
