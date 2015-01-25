@@ -8,7 +8,7 @@ module TweetsHelper
   end
 
   def get_retweet(tweet_id)
-    current_user.retweets.find_by(retweet_id: tweet_id)
+    current_user.retweets.find_by(source_tweet_id: tweet_id)
   end
 
   def retweeted?(tweet_id)

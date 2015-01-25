@@ -1,0 +1,91 @@
+.feed {
+  @extend .well;
+  .micropost {
+    padding: 20px;
+    .content {
+      @extend .row;
+
+      .avatar-content {
+        @extend .col-lg-1; 
+        @extend .col-md-1; 
+        @extend .col-xs-1;
+        img {
+          border-radius: 10rem;
+          width: 40px;
+        }
+      }
+
+      .post-content {
+        @extend .col-lg-9; 
+        @extend .col-md-11; 
+        @extend .col-xs-11;
+        .post {
+          margin-top: 5px;
+          margin-left: 20px;
+        }
+
+        .name {
+          font-weight: 700;
+          font-size: 1.35rem;
+          display: inline;
+          margin-left: 20px;
+        }
+
+        .username {
+          font-weight: 600;
+          font-size: 1.25rem;
+          color: #888;
+          display: inline;
+        }
+
+        .mention {
+          font-weight: 700; 
+          color: #019c70;
+        }
+
+        .hashtags {
+          color: #4285f4;
+          cursor: pointer;
+          font-weight: bold;
+        }
+      }
+
+      .right-content {
+        @extend .col-lg-2; 
+        @extend .col-lg-offset-0; 
+        @extend .col-md-4; 
+        @extend .col-md-offset-2; 
+        @extend .col-xs-4; 
+        @extend .col-xs-offset-2;
+        color: #999;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+    }
+
+    .actions {
+      @extend .row;
+      margin-left: 10px;
+      margin-top: 15px;
+      .actions-content {
+        @extend .col-lg-11;
+        @extend .col-lg-offset-1;
+
+        a {
+          color: #888;
+          font-size: 1.75rem;
+          margin-right: 20px;
+          text-decoration: none;  
+          &:hover {
+            color: #4285f4;
+          };
+        }
+
+        i.disabled {
+          color: #ccc;
+          cursor: default;
+        }
+      }
+    }
+  }
+}

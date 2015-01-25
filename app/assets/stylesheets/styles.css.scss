@@ -52,3 +52,27 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 30px;
   }
 }
+
+.avatar-xs {
+  width: 25px;
+  border-radius: 3px;
+}
+
+ul.dropdown-menu {
+  margin-top: 10px !important;
+  border-radius: 5px !important;
+  li {
+    padding: 5px 0px;
+    a {
+      font-weight: 600;
+    }
+  }
+}
+
+.retweeted {
+  color: green !important;
+}
+
+.favored {
+  color: gold !important;
+}
