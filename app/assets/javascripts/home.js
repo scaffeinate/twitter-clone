@@ -3,3 +3,7 @@
 var removeParent = function(e){
   $(e).parent().parent().remove();
 };
+
+$(document).ready(function(){
+  $("#new-tweet").autosize();
+});

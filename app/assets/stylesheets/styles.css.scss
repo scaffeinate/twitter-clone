@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .avatar-xs {
-  width: 25px;
+  width: 32px;
   border-radius: 10rem;
 }
 
@@ -62,10 +62,7 @@ ul.dropdown-menu {
   margin-top: 10px !important;
   border-radius: 5px !important;
   li {
-    padding: 5px 0px;
-    a {
-      font-weight: 600;
-    }
+    margin: 5px 0px;
   }
 }
 
@@ -75,4 +72,16 @@ ul.dropdown-menu {
 
 .favored {
   color: gold !important;
+}
+
+.navbar-nav>li>a.profile-image {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#new-tweet {
+  border: 1px solid #ccc;
+  resize: none;
+  max-height: 100px;
+  box-shadow: none;
 }
