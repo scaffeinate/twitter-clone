@@ -1,16 +1,18 @@
-<div class="well user-info">
+<div class="card">
   <div class="text-center">
-    <%= render 'partials/avatar', user: @user, klass: 'avatar-lg' %>
-    <h4><b><%= @user.name %></b></h4>
-    <h3><small>@<%= @user.username %></small></h3>
     <br>
-    <h5><%= @user.about || "No Info" %></h5>
-    <% unless @user.location.empty? %>
+    <%= render 'partials/avatar', user: @user, klass: 'avatar-lg' %>
+  </div>
+  <div class="about" style="margin-top: 10px;">
+    <h3 class="name"><%= @user.name %></h4>
+    <h3 class="username">@<%= @user.username %></h3>
+    <h5 class="content"><%= @user.about || "No Info" %></h5>
+    <% unless @user.location.nil? || @user.location.empty? %>
       <h5><i class="fa fa-map-marker"></i> <%= @user.location %></h5>
     <% end %>
-    <% unless @user.website.empty? %>
+    <% unless @user.website.nil? || @user.location.empty? %>
       <h5><i class="fa fa-link"></i> <%= @user.website %></h5>
     <% end %>
-    <h5><i class="fa fa-clock-o"></i> Joined <%= @user.created_at %></h5>
+    <h5><i class="fa fa-clock-o"></i> Joined <%= formatted_time(@user.created_at) %></h5>
   </div>
 </div>

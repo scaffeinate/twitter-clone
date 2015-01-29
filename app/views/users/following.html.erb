@@ -8,7 +8,11 @@
   <div class="col-lg-6">
     <div id="content">
       <div id="feed" class="well">
-        <%= render(@following) || "No Following" %>
+        <div class="row">
+          <div class="col-lg-10 col-lg-offset-1">
+            <%= render(@following) || "No Following" %>
+          </div>
+        </div>
       </div>
       <div id="load-more">
         <%= render 'partials/load_more', items: @following %>

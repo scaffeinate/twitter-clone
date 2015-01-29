@@ -12,6 +12,11 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+          </form>
           <li>
             <a href="#", class="profile-image dropdown-toggle" data-toggle="dropdown", role="button", aria-expanded="false">
               <%= image_tag current_user.avatar, class: "avatar-xs" %>
@@ -25,7 +30,7 @@
             </ul>
           </li>
           <form class="navbar-form navbar-right">
-            <button type="submit" class="btn btn-primary">Tweet</button>
+            <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Tweet</button>
           </form>
         <% end %>
       </ul>
