@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150125070639) do
+ActiveRecord::Schema.define(version: 20150203041808) do
 
   create_table "favorites", force: true do |t|
     t.integer  "tweet_id"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20150125070639) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "parent_id"
+    t.string   "media"
   end
 
   add_index "tweets", ["user_id"], name: "index_tweets_on_user_id"
