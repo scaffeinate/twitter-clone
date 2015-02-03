@@ -16,4 +16,5 @@
 //= require jquery.backstretch
 //= require bindWithDelay
 //= require jquery.autosize.min
+//= require jquery.remotipart
 //= require_tree .
