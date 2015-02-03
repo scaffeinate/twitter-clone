@@ -27,6 +27,13 @@
       <span id="favor-tweet-<%= tweet.id %>">
         <%= render 'favorites/favorite_button', tweet_id: tweet.id %>
       </span>
+      <% if tweet.user == current_user %>
+        <%= link_to tweet_path(tweet), method: :delete, remote: true do %>
+          <i class="fa fa-trash"></i>
+        <% end %>
+      <% end %>
     </div>
+  </div>
+  <div class="reply-form">
   </div>
 </div>

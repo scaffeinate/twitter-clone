@@ -22,6 +22,7 @@ class TweetsController < ApplicationController
 
   def destroy
     @tweet = Tweet.find(params[:id])
+    @tweet_id = params[:id]
     @tweet.destroy
     respond_to do |format|
       format.js
