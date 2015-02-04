@@ -1,0 +1,9 @@
+<% if tweet_favored?(tweet_id) %>
+  <%= link_to favorite_path(get_favorite(tweet_id)), method: :delete, remote: true, class: "favored" do %>
+    <i class="fa fa-star"></i>
+  <% end %>
+<% else %>
+  <%= link_to favorites_path(tweet_id: tweet_id), method: :post, remote: true do %>
+    <i class="fa fa-star"></i>
+  <% end %>
+<% end %>

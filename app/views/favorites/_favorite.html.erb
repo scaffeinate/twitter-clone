@@ -1,5 +1,0 @@
-<% if tweet_favored?(tweet_id) %>
-  <%= link_to :favored, favorite_path(get_favorite(tweet_id)), method: :delete, remote: true %>
-<% else %>
-  <%= link_to :favor, favorites_path(tweet_id: tweet_id), method: :post, remote: true %>
-<% end %>

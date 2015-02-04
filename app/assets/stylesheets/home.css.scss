@@ -1,3 +1,13 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#ps-media-upload-btn, #location-btn {
+	margin-right: 10px;
+	float: right;
+	color: $blackboard-bg;
+}
+
+#location-btn i {
+	padding: 2px;
+}

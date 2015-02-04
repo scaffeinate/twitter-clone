@@ -1,5 +1,5 @@
-<% if @tweet.persisted? %>
-  $("#new-tweet").val("");
+<% if remotipart_submitted? && @tweet.persisted? %>
+  $("#tweet_tweet_text").val("");
   $("#feed").prepend("<%=j render @tweet %>");
 <% else %>
   

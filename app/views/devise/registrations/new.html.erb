@@ -1,9 +1,15 @@
-<div class="row">
-  <div class="col-lg-6 col-lg-offset-3">
+<% if resource.errors.any? %>
+  <div class="alert alert-danger alert-dismissable alert-fixed">
+    <%= resource.errors.full_messages.first %>
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  </div>
+<% end %>
+<div class="tw-form row">
+  <div class="col-lg-4 col-lg-offset-4">
     <div class="well">
+      <h4><b>Sign up</b></h4>
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
-          <h2>Sign up</h2>
           <%= render "form" %>
           <%= render "devise/shared/links" %>
         </div>

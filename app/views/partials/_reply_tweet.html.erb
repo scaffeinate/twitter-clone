@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-lg-10 col-lg-offset-1">
+    <%= form_tag tweets_path(parent: tweet), method: :post, remote: true do %>
+      <div class="form-group">
+        <%= text_area_tag 'tweet[tweet_text]', "@#{tweet.user.username}", class: 'form-control', placeholder: 'Enter Reply' %>
+      </div>
+      <div class="form-group">
+        <%= submit_tag 'Reply', id: 'tweet', class: 'btn btn-primary' %>
+        <%= link_to 'Cancel', '#', class: 'btn btn-primary cancel-reply', onclick: 'removeParent(this);', "data-tweet": tweet.id %>
+      </div>
+    <% end %>
+  </div>
+</div>

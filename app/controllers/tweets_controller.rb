@@ -22,6 +22,7 @@ class TweetsController < ApplicationController
 
   def destroy
     @tweet = Tweet.find(params[:id])
+    @tweet_id = params[:id]
     @tweet.destroy
     respond_to do |format|
       format.js
@@ -37,7 +38,7 @@ class TweetsController < ApplicationController
 
   private
   def tweet_params
-    params.require(:tweet).permit(:tweet_text, :location)
+    params.require(:tweet).permit(:tweet_text, :location, :media)
   end
 
 end

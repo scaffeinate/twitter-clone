@@ -1,0 +1,20 @@
+<div class="modal fade" id="image-upload-modal" tabindex="-1" role="dialog" aria-labelledby="imageUploadLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Media Upload</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_tag media_path, method: :post, class: "dropzone", id: "media-dropzone" do %>
+          <div class="fallback">
+            <%= file_field_tag :image, multiple: false %>
+          </div>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
