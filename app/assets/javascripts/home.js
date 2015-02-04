@@ -5,5 +5,5 @@ var removeParent = function(e){
 };
 
 $(document).ready(function(){
-  $("#new-tweet").autosize();
+  $("#tweet_tweet_text").autosize();
 });
