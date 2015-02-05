@@ -2,6 +2,10 @@
   <div class="form-group">
     <%= text_area_tag "tweet[tweet_text]", nil, class: "form-control", placeholder: "Enter Tweet 140 characters" %>
   </div>
+  <div class="form-group hidden">
+    <img id="tweet-img-preview">
+    <a id="remove-tweet-img" href="#">&times;</a>
+  </div>
   <div class="form-group">
     <%= hidden_field_tag "tweet[location]", nil %>
   </div>

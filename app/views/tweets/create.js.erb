@@ -1,4 +1,4 @@
-<% if remotipart_submitted? && @tweet.persisted? %>
+<% if @tweet.persisted? %>
   $("#tweet_tweet_text").val("");
   $("#feed").prepend("<%=j render @tweet %>");
 <% else %>
