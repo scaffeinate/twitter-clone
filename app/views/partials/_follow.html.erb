@@ -1,5 +1,5 @@
 <% if following?(user) %>
-  <%= link_to 'Following', relationship_path(current_user.relationships.find_by_friend_id(user)), method: :delete, remote: true, class: 'btn btn-success' %>
+  <%= link_to fa_icon("check"), relationship_path(current_user.relationships.find_by_friend_id(user)), method: :delete, remote: true, class: 'btn btn-success' %>
 <% else %>
-  <%= link_to 'Follow', relationships_path(friend_id: user.id), method: :post, remote: true, class: 'btn btn-primary' %>
+  <%= link_to fa_icon("user-plus").html_safe, relationships_path(friend_id: user.id), method: :post, remote: true, class: 'btn btn-primary' %>
 <% end %>

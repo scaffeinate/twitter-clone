@@ -6,7 +6,7 @@
     <%= link_to user_path(user) do %>
       <h5><%= user.name %> <b>@<%= user.username %></b></h5>
     <% end %>
-    <h5><%= user.about %></h5>
+    <h5><%= user.about || "No Bio." %></h5>
   </div>
   <div class="col-lg-3">
     <div id="relation-<%= user.id %>" class="right" style="margin-top: 10px;">
@@ -14,4 +14,5 @@
     </div>
   </div>
 </div>
-<hr>
+<br>
+<br>

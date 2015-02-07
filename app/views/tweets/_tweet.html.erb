@@ -10,8 +10,8 @@
       <span class="username">@<%= tweet.user.username %></span>
       <div class="post">
         <%= tweet.tweet_text %>
-        <%= image_tag tweet.media_url, style: "width: 300px; margin-top: 20px;" if tweet.media? %>
       </div>
+      <%= image_tag tweet.media_url, style: "width: 300px; margin-top: 20px;" if tweet.media? %>
     </div>
     <div class="right-content">
       <span><%= relative_time(tweet.created_at) %></span>

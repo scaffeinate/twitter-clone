@@ -11,7 +11,9 @@
   </div>
   <div class="form-group">
     <%= file_field_tag "tweet[media]", class: "hidden", id: "media-upload-btn" %>
-    <%= submit_tag "Tweet", id: 'tweet', class: 'btn btn-primary' %>
+    <%= button_tag id: "tweet", class: "btn btn-primary" do %>
+      <%= fa_icon "paper-plane" %> Tweet
+    <% end %>
     <a id="ps-media-upload-btn" href="javascript:void(0);" class="btn btn-default">
       <i class="fa fa-camera"></i>
     </a>
