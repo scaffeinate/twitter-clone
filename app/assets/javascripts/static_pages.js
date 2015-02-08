@@ -2,5 +2,5 @@
 // All this logic will automatically be available in application.js.
 
 $(document).ready(function(){
-  $.backstretch('/assets/background.jpg');
+  $.backstretch($('#bg-img').data('img'));
 });

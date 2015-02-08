@@ -1,11 +1,11 @@
-<div class="row tw-form">
-  <div class="col-lg-4 col-lg-offset-4">
+<div id="change-password-form" class="row tw-form">
+  <div class="col-lg-6 col-lg-offset-3">
     <div class="well">
-      <h4><b>Change your password</b></h4>
+      <h4 class="title"><b>Change your password</b></h4>
       <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
+        <div class="col-lg-8 col-lg-offset-1">
+          <label>To change your password enter new password and confirmation</label>
           <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-            <%= devise_error_messages! %>
             <%= f.hidden_field :reset_password_token %>
             <div class="form-group">
               <%= f.password_field :password, autofocus: true, class: "form-control", placeholder: "Password",autocomplete: "off" %>
@@ -16,6 +16,7 @@
             <div class="form-group">
               <%= f.submit "Change password", class: "btn btn-primary" %>
             </div>
+            <%= render 'partials/devise_form_errors' %>
           <% end %>
         </div>
       </div>
