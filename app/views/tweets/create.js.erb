@@ -1,6 +1,7 @@
 <% if @tweet.persisted? %>
   $("#tweet_tweet_text").val("");
   $("#feed").prepend("<%=j render @tweet %>");
+ 	$('#tweet-error').html("<%=j render 'partials/error_message', error_message: 'Tweet posted successfully to your timeline' %>");
 <% else %>
-  
+	$('#tweet-error').html("<%=j render 'partials/error_message', error_message: 'Sorry! Tweet cannot be posted at this moment. Try again?' %>");
 <% end %>

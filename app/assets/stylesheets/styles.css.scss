@@ -79,13 +79,20 @@ ul.dropdown-menu {
 }
 
 #tweet_tweet_text {
-  border: 1px solid #ccc;
   resize: none;
   max-height: 100px;
-  box-shadow: none;
 }
 
 .avatar-md {
   width: 50px;
   border-radius: 10rem;
+}
+
+input, textarea {
+  box-shadow: none !important;
+}
+
+.dropdown-menu > li > a:hover {
+  background-color: #3071a9;
+  color: #fff;
 }
