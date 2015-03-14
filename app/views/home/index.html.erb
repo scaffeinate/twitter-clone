@@ -9,15 +9,26 @@
         <h5 class="username"><b>@<%= current_user.username %></b></h5>
         <span class="content"><%= current_user.about %></span>
       </div>
-      <div class="stats row">
-        <div class="col-lg-4">
-          Tweets
-        </div>
-        <div class="col-lg-4">
-          Followers
-        </div>
-        <div class="col-lg-4">
-          Following
+      <div class="stats">
+        <div class="row">
+          <div class="col-lg-4 text-center">
+            <%= link_to user_path(current_user) do %>
+              <h5><b>Tweets</b></h5>
+              <h4><%= @tweet_count || 0 %></h4>
+            <% end %>
+          </div>
+          <div class="col-lg-4 text-center">
+            <%= link_to followers_user_path(current_user) do %>
+              <h5><b>Followers</b></h5>
+              <h4><%= @followers_count || 0 %></h4>
+            <% end %>
+          </div>
+          <div class="col-lg-4 text-center">
+            <%= link_to following_user_path(current_user) do %>
+              <h5><b>Following</b></h5>
+              <h4><%= @following_count || 0 %></h4>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
