@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150203221205) do
+ActiveRecord::Schema.define(version: 20150315004657) do
 
   create_table "favorites", force: true do |t|
     t.integer  "tweet_id"
@@ -88,6 +88,9 @@ ActiveRecord::Schema.define(version: 20150203221205) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.integer  "tweets_count",           default: 0,  null: false
+    t.integer  "followers_count",        default: 0,  null: false
+    t.integer  "following_count",        default: 0,  null: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

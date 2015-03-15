@@ -53,6 +53,7 @@ gem 'will_paginate', '~> 3.0.6'
 gem 'backstretch-rails'
 
 gem 'remotipart', '~> 1.2'
+gem 'counter_culture', '~> 0.1.23'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

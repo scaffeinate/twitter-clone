@@ -22,19 +22,19 @@
           <div class="col-lg-4 text-center">
             <%= link_to user_path(user) do %>
               <h5><b>Tweets</b></h5>
-              <h4><%= @tweets_count || 0 %></h4>
+              <h4><%= user.tweets_count %></h4>
             <% end %>
           </div>
           <div class="col-lg-4 text-center">
             <%= link_to followers_user_path(user) do %>
               <h5><b>Followers</b></h5>
-              <h4><%= @followers_count || 0 %></h4>
+              <h4><%= user.followers_count %></h4>
             <% end %>
           </div>
           <div class="col-lg-4 text-center">
             <%= link_to following_user_path(user) do %>
               <h5><b>Following</b></h5>
-              <h4><%= @following_count || 0 %></h4>
+              <h4><%= user.following_count %></h4>
             <% end %>
           </div>
         </div>
