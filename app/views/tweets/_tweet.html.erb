@@ -6,8 +6,12 @@
       <% end %>
     </div>
     <div class="post-content">
-      <span class="name"><%= tweet.user.name %></span>
-      <span class="username">@<%= tweet.user.username %></span>
+      <%= link_to tweet.user do %>
+        <span class="name"><%= tweet.user.name %></span>
+      <% end %>
+      <%= link_to tweet.user do %>
+        <span class="username">@<%= tweet.user.username %></span>
+      <% end %>
       <div class="post">
         <%= tweet.tweet_text %>
       </div>

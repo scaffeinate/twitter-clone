@@ -1,6 +1,9 @@
 .feed {
   @extend .well;
   .micropost {
+    a {
+      text-decoration: none;
+    }
     padding: 10px;
     .content {
       @extend .row;

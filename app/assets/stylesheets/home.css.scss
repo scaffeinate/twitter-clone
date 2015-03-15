@@ -2,9 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#ps-media-upload-btn, #location-btn {
+#ps-media-upload-btn, #location-btn, #tweet-count {
 	margin-right: 10px;
-	float: right;
 	color: $blackboard-bg;
 }
 
@@ -18,7 +17,7 @@
 }
 
 .stats {
-	padding: 0px 10px;
+	margin-left: -5px;
   a {
     text-decoration: none;
   }
