@@ -1,5 +1,6 @@
 .feed {
   @extend .well;
+  border-radius: 3px;
   .micropost {
     a {
       text-decoration: none;
@@ -23,7 +24,7 @@
         @extend .col-md-9;
         @extend .col-sm-9;
         @extend .col-xs-9;
-        .post {
+        .post, .media {
           margin-top: 5px;
           margin-left: 20px;
         }
