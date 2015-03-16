@@ -1,3 +1,4 @@
 <% if @relationship.destroyed? %>
   $("#relation-<%= @friend.id %>").html("<%=j render('partials/follow', user: @friend) %>");
+  $('#following-count').html('<%= current_user.reload.following_count %>');
 <% end %>
