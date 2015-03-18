@@ -2,9 +2,6 @@
   @extend .well;
   border-radius: 3px;
   .micropost {
-    a {
-      text-decoration: none;
-    }
     padding: 10px;
     .content {
       @extend .row;
@@ -41,7 +38,7 @@
           font-size: 1.25rem;
           color: #888;
           display: inline;
-          margin-left: 20px;
+          margin-left: 5px;
         }
 
         .mention {
