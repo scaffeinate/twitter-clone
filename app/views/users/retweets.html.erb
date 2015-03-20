@@ -3,7 +3,7 @@
 <%= render 'user_nav', view_type: 'retweets' %>
 <div class="row">
   <div class="col-lg-3">
-    <%= render 'user_info' %>
+    <%= render 'partials/user_info', view_type: 'profile', user: @user %>
   </div>
   <div class="col-lg-6">
     <div id="content">
@@ -14,5 +14,8 @@
         <%= render 'partials/load_more', items: @retweets %>
       </div>
     </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="well"></div>
   </div>
 </div>

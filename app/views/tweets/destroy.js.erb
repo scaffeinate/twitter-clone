@@ -1,1 +1,7 @@
-$("#tweet-<%= @tweet_id %>").remove();
+<% if @tweet.destroy %>
+  $("#tweet-<%= @tweet_id %>").remove();
+  $('#tweets-count').html("<%= current_user.reload.tweets_count %>");
+  $('#tweet-error').html("<%=j render 'partials/error_message', error_message: 'Tweet deleted successfully' %>");
+<% else %>
+  $('#tweet-error').html("<%=j render 'partials/error_message', error_message: 'Tweet deletion failed. Try again later' %>");
+<% end %>

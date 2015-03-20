@@ -1,0 +1,30 @@
+.alert-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-left: 35%;
+  margin-top: 25px;
+  width: 30%;
+  z-index: 10000;
+  text-align: center;
+}
+
+.alert {
+  padding: 10px 25px;
+}
+
+button.close {
+	font-weight: lighter;
+	opacity: 1;
+  margin: 5px;
+  font-size: 1.65rem;
+}
+
+.alert-danger {
+	background: #fff;
+	border-color: #f43c43;
+}
+
+.alert-info {
+	background: #fff;
+}

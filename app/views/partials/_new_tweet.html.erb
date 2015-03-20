@@ -14,11 +14,17 @@
     <%= button_tag id: "tweet", class: "btn btn-primary" do %>
       <%= fa_icon "paper-plane" %> Tweet
     <% end %>
-    <a id="ps-media-upload-btn" href="javascript:void(0);" class="btn btn-default">
-      <i class="fa fa-camera"></i>
-    </a>
-    <a id="location-btn" href="#" class="btn btn-default">
-      <i class="fa fa-map-marker"></i>
-    </a>
+    <div class="pull-right">
+      <span id="tweet-count">140</span>
+      <a id="ps-media-upload-btn" href="javascript:void(0);" class="btn btn-default">
+        <i class="fa fa-camera"></i>
+      </a>
+      <a id="location-btn" href="#" class="btn btn-default">
+        <i class="fa fa-map-marker"></i>
+      </a>
+    </div>
   </div>
 <% end %>
+<div id="tweet-error">
+  <%= render 'partials/error_message', error_message: nil %>
+</div>

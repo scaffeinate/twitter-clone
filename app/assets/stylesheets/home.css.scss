@@ -2,17 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#ps-media-upload-btn, #location-btn {
+#ps-media-upload-btn, #location-btn, #tweet-count {
 	margin-right: 10px;
-	float: right;
 	color: $blackboard-bg;
 }
 
-#location-btn i {
-	padding: 2px;
+#ps-media-upload-btn, #location-btn {
+	border-radius: 10rem;
+  padding: 6px 9px;
+}
+
+#location-btn {
+  padding: 6px 12px; 
+}
+
+#ps-media-upload-btn i, #location-btn i {
+	padding: 0px;
 }
 
 #tweet-img-preview {
 	width: 45px;
 	height: 35px;
+}
+
+.stats {
+	margin-left: -5px;
+  a {
+    text-decoration: none;
+  }
 }

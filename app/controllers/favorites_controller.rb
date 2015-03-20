@@ -3,7 +3,7 @@ class FavoritesController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @favorite = Favorite.create(tweet_id: params[:tweet_id], user: current_user)
+    @favorite = Favorite.new(tweet_id: params[:tweet_id], user: current_user)
     respond_to do |format|
       format.js
     end
@@ -11,7 +11,6 @@ class FavoritesController < ApplicationController
 
   def destroy
     @favorite = Favorite.find(params[:id])
-    @favorite.destroy
     respond_to do |format|
       format.js
     end

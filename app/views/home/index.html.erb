@@ -1,16 +1,6 @@
 <div class="row">
   <div class="col-lg-3">
-    <div class="card">
-      <div class="cover" data-cover="<%= current_user.cover %>">
-        <%= image_tag current_user.avatar, class: "avatar" %>
-      </div>
-      <div class="about">
-        <h3 class="name"><%= current_user.name %></h3>
-        <h5 class="username"><b>@<%= current_user.username %></b></h5>
-        <br>
-        <span class="content"><%= current_user.about %></span>
-      </div>
-    </div>
+    <%= render 'partials/user_info', view_type: 'home', user: current_user %>
   </div>
   <div class="col-lg-6">
     <div class="row">

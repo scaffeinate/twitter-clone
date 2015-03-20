@@ -6,12 +6,18 @@
       <% end %>
     </div>
     <div class="post-content">
-      <span class="name"><%= tweet.user.name %></span>
-      <span class="username">@<%= tweet.user.username %></span>
+      <%= link_to tweet.user do %>
+        <span class="name"><%= tweet.user.name %></span>
+      <% end %>
+      <%= link_to tweet.user do %>
+        <span class="username">@<%= tweet.user.username %></span>
+      <% end %>
       <div class="post">
-        <%= tweet.tweet_text %>
+        <%= auto_link(parse(tweet.tweet_text), html: { target: '_blank' }) %>
       </div>
-      <%= image_tag tweet.media_url, style: "width: 300px; margin-top: 20px;" if tweet.media? %>
+      <div class="media">
+        <%= image_tag tweet.media_url, style: "width: 100%; margin-top: 10px;" if tweet.media? %>
+      </div>
     </div>
     <div class="right-content">
       <span><%= relative_time(tweet.created_at) %></span>
