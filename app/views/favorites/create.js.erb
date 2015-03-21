@@ -1,5 +1,5 @@
 <% if @favorite.save %>
   $("#favor-tweet-<%= @favorite.tweet_id %>").html("<%=j render('favorites/favorite_button', tweet_id: @favorite.tweet_id) %>");
 <% else %>
-  $('#tweet-error').html("<%=j render 'partials/error_message', error_message: 'Couldn\'t favour tweet. Try again?' %>");
+  $('#message').html("<%=j render 'partials/messages', message: 'Couldn\'t favour tweet. Try again?' %>");
 <% end %>

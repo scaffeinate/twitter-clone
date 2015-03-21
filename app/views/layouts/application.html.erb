@@ -7,20 +7,10 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+    <div id="bg-img" data-img="<%= fetch_background %>"></div>
     <%= render 'partials/navbar' %>
-    <% unless notice.blank? %>
-      <div class="alert alert-info alert-dismissable alert-fixed">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <%= notice %>
-      </div>
-    <% end %>
-    <% unless alert.blank? %>
-      <div class="alert alert-danger alert-dismissable alert-fixed">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <%= alert %>
-      </div>
-    <% end %>
-    <div id="bg-img" data-img="<%= fetch_bg_img %>"></div>
+    <div id="message"></div>
+    <%= render 'partials/messages', message: nil %>
     <div class="container">
       <%= yield %>
       <%= render 'partials/tweet_modal' %>
