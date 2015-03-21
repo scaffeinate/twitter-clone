@@ -18,3 +18,7 @@
 //= require jquery.autosize.min
 //= require jquery.remotipart
 //= require_tree .
+
+$(document).ready(function(){
+  $.backstretch($('#bg-img').data('img'));
+});
