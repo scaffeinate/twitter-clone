@@ -1,0 +1,6 @@
+<% if resource.errors.any? %>
+  <div class="alert alert-danger alert-dismissable">
+  	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <%= resource.errors.full_messages.first %>
+  </div>
+<% end %>

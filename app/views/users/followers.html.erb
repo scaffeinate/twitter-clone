@@ -3,16 +3,24 @@
 <%= render 'user_nav', view_type: 'followers' %>
 <div class="row">
   <div class="col-lg-3">
-    <%= render 'user_info' %>
+    <%= render 'partials/user_info', view_type: 'profile', user: @user %>
   </div>
   <div class="col-lg-6">
-    <div id="content">
+    <div id="content" class="tw-form">
       <div id="feed" class="well">
-        <%= render(@followers) || "No Followers" %>
+        <h4><b>Followers</b></h4>
+        <div class="row">
+          <div class="col-lg-10 col-lg-offset-1">
+            <%= render(@followers) || "No Followers" %>
+          </div>
+        </div>
       </div>
       <div id="load-more">
         <%= render 'partials/load_more', items: @followers %>
       </div>
     </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="well"></div>
   </div>
 </div>

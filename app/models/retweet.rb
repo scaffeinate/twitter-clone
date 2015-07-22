@@ -1,4 +1,7 @@
 class Retweet < ActiveRecord::Base
   belongs_to :retweeter, class_name: "User"
-  belongs_to :retweet, class_name: "Tweet"
+  belongs_to :source_tweet, class_name: "Tweet"
+
+  validates_presence_of :retweeter
+
 end

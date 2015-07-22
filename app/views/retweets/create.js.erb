@@ -1,1 +1,5 @@
-$("#retweet-<%= @retweet.retweet.id %>").html("<%=j render('retweets/retweet', tweet_id: @retweet.retweet.id) %>");
+<% if @retweet.save %>
+	$("#retweet-<%= @retweet.source_tweet_id %>").html("<%=j render('retweets/retweet_button', tweet_id: @retweet.source_tweet_id) %>");
+<% else %>
+  $('#tweet-error').html("<%=j render 'partials/error_message', error_message: 'Couldn\'t Retweet. Try again later' %>");
+<% end %>

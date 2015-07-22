@@ -1,10 +1,15 @@
-<div id="find_friends" class="well">
-  <% if @users.empty? %>
-    <span>No Following</span>
-  <% else %>
-    <%= render(@users) %>
-  <% end %>
-</div>
-<div id="load-more">
-  <%= render 'partials/load_more', items: @users %>
+<div class="tw-form row">
+  <div class="col-lg-6 col-lg-offset-3">
+    <div id="find_friends" class="well">
+      <h4><b>Find Friends</b></h4>
+      <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+          <%= render(@users) || "Couldn't Find Friends at the current moment" %>
+        </div>
+      </div>
+    </div>
+    <div id="load-more">
+      <%= render 'partials/load_more', items: @users %>
+    </div>
+  </div>
 </div>

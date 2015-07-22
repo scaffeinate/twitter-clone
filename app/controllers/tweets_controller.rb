@@ -3,7 +3,7 @@ class TweetsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @tweet = Tweet.create(tweet_params) do |tweet|
+    @tweet = Tweet.new(tweet_params) do |tweet|
       tweet.user = current_user
       tweet.parent_id = params[:parent_id]
     end
@@ -22,7 +22,7 @@ class TweetsController < ApplicationController
 
   def destroy
     @tweet = Tweet.find(params[:id])
-    @tweet.destroy
+    @tweet_id = params[:id]
     respond_to do |format|
       format.js
     end
@@ -37,7 +37,7 @@ class TweetsController < ApplicationController
 
   private
   def tweet_params
-    params.require(:tweet).permit(:tweet_text, :location)
+    params.require(:tweet).permit(:tweet_text, :location, :media)
   end
 
 end

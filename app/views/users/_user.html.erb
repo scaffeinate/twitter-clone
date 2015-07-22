@@ -1,9 +1,18 @@
-<%= render 'partials/avatar', user: user, klass: 'avatar' %>
-<div id="relation-<%= user.id %>" class="right" style="margin-top: 10px;">
-  <%= render 'partials/follow', user: user %>
+<div class="row">
+  <div class="col-lg-2">
+    <%= render 'partials/avatar', user: user, klass: 'avatar-md' %>
+  </div>
+  <div class="col-lg-7">
+    <%= link_to user_path(user) do %>
+      <h5><%= user.name %> <b>@<%= user.username %></b></h5>
+    <% end %>
+    <h5><%= user.about || "No Bio." %></h5>
+  </div>
+  <div class="col-lg-3">
+    <div id="relation-<%= user.id %>" class="right" style="margin-top: 10px;">
+      <%= render 'partials/follow', user: user %>
+    </div>
+  </div>
 </div>
-<%= link_to user_path(user) do %>
-  <h3 class="inline bold" style="margin-left: 20px;">
-    <small><%= user.name %></small>
-  </h3>
-<% end %>
+<br>
+<br>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150116004407) do
+ActiveRecord::Schema.define(version: 20150315004657) do
 
   create_table "favorites", force: true do |t|
     t.integer  "tweet_id"
@@ -45,12 +45,12 @@ ActiveRecord::Schema.define(version: 20150116004407) do
 
   create_table "retweets", force: true do |t|
     t.integer  "retweeter_id"
-    t.integer  "retweet_id"
+    t.integer  "source_tweet_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "retweets", ["retweet_id", "retweeter_id"], name: "index_retweets_on_retweet_id_and_retweeter_id"
+  add_index "retweets", ["source_tweet_id", "retweeter_id"], name: "index_retweets_on_source_tweet_id_and_retweeter_id"
 
   create_table "tweets", force: true do |t|
     t.string   "tweet_text", limit: 140
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20150116004407) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "parent_id"
+    t.string   "media"
   end
 
   add_index "tweets", ["user_id"], name: "index_tweets_on_user_id"
@@ -87,6 +88,9 @@ ActiveRecord::Schema.define(version: 20150116004407) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.integer  "tweets_count",           default: 0,  null: false
+    t.integer  "followers_count",        default: 0,  null: false
+    t.integer  "following_count",        default: 0,  null: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

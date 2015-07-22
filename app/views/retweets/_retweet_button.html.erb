@@ -1,8 +1,13 @@
 <% if can_retweet?(tweet_id) %>
   <% if retweeted?(tweet_id) %>
+    <%= link_to retweet_path(get_retweet(tweet_id)), class: "retweeted", method: :delete, remote: true do %>
+      <i class="fa fa-retweet"></i>
+    <% end %>
   <% else %>
-    <%= link_to :retweet, retweets_path(tweet_id: tweet_id), method: :post, remote: true %>
+    <%= link_to retweets_path(tweet_id: tweet_id), method: :post, remote: true do %>
+      <i class="fa fa-retweet"></i>
+    <% end %>
   <% end %>
 <% else %>
-  <a href="#">retweet</a>
+  <a href="javascript:void(0);"><i class="fa fa-retweet"></i></a>
 <% end %>

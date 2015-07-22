@@ -1,0 +1,44 @@
+<div class="card">
+  <div class="cover" data-cover="<%= user.cover %>">
+    <%= image_tag user.avatar, class: "avatar" %>
+  </div>
+  <div class="about">
+    <h3 class="name"><%= user.name %></h3>
+    <h5 class="username"><b>@<%= user.username %></b></h5>
+    <span class="content"><%= user.about %></span>
+    <% if view_type == 'profile' %>
+      <div class="row">
+        <% unless @user.location.blank? %>
+          <h5><i class="fa fa-map-marker"></i> <%= @user.location %></h5>
+        <% end %>
+        <% unless @user.website.blank? %>
+          <h5><i class="fa fa-link"></i> <%= link_to @user.website, @user.website %></h5>
+        <% end %>
+        <h5><i class="fa fa-clock-o"></i> Joined <%= formatted_time(@user.created_at) %></h5>
+      </div>
+    <% else %>
+      <div class="stats">
+        <div class="row">
+          <div class="col-lg-4 text-center">
+            <%= link_to user_path(user) do %>
+              <h5><b>Tweets</b></h5>
+              <h4 id="tweets-count"><%= user.tweets_count %></h4>
+            <% end %>
+          </div>
+          <div class="col-lg-4 text-center">
+            <%= link_to followers_user_path(user) do %>
+              <h5><b>Followers</b></h5>
+              <h4 id="followers-count"><%= user.followers_count %></h4>
+            <% end %>
+          </div>
+          <div class="col-lg-4 text-center">
+            <%= link_to following_user_path(user) do %>
+              <h5><b>Following</b></h5>
+              <h4 id="following-count"><%= user.following_count %></h4>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

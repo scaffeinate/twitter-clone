@@ -10,18 +10,20 @@
     <%= render 'partials/navbar' %>
     <% unless notice.blank? %>
       <div class="alert alert-info alert-dismissable alert-fixed">
-        <%= notice %>
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <%= notice %>
       </div>
     <% end %>
     <% unless alert.blank? %>
       <div class="alert alert-danger alert-dismissable alert-fixed">
-        <%= alert %>
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <%= alert %>
       </div>
     <% end %>
-    <div class="container-fluid">
+    <div id="bg-img" data-img="<%= fetch_bg_img %>"></div>
+    <div class="container">
       <%= yield %>
+      <%= render 'partials/tweet_modal' %>
     </div>
   </body>
 </html>

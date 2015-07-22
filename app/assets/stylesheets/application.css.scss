@@ -14,20 +14,11 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 @import "*";
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
 
 body {
+  font-family: 'Lato';
   padding-top: 75px;
-}
-
-.alert-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  margin-left: 40%;
-  margin-top: 10px;
-  width: 300px;
-  z-index: 10000;
-  text-align: center;
-  padding: 5px 25px;
 }
